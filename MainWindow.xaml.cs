@@ -20,125 +20,107 @@ namespace ADO__DZ1
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
-        // Задание 1
-        //private void LaunchProcess_Click(object sender, RoutedEventArgs e)
-        //{
-        //    // Создаем процесс
-        //    Process process = new Process();
-        //    process.StartInfo.FileName = "notepad.exe";
-        //    process.StartInfo.UseShellExecute = false;
-        //    process.StartInfo.RedirectStandardOutput = true;
+  {
+      public MainWindow()
+      {
+          InitializeComponent();
+      }
+      // Задание 1
+      //private void LaunchProcess_Click(object sender, RoutedEventArgs e)
+      //{
+      //    Process process = new Process();
+      //    process.StartInfo.FileName = "notepad.exe";
+      //    process.StartInfo.UseShellExecute = false;
+      //    process.StartInfo.RedirectStandardOutput = true;
 
-        //    // Запускаем процесс
-        //    process.Start();
+      //    process.Start();
 
-        //    //  завершения процесса
-        //    process.WaitForExit();
+      //    process.WaitForExit();
 
-        //    //  код завершения
-        //    int exitCode = process.ExitCode;
+      //    int exitCode = process.ExitCode;
 
-        //    // Отобра;tybt код завершения
-        //    Output.Text = $"Код завершения: {exitCode}";
+      //    Output.Text = $"Код завершения: {exitCode}";
 
-        //        Задание 2
-        //  private void LaunchProcess_Click(object sender, RoutedEventArgs e)
-        //        {
-        //            // Создаем процесс
-        //            Process process = new Process();
-        //            process.StartInfo.FileName = "notepad.exe";
-        //            process.StartInfo.UseShellExecute = false;
-        //            process.StartInfo.RedirectStandardOutput = true;
-
-        //            // Запускаем процесс
-        //            process.Start();
-
-        //            // Проверяем, нужно ли ожидать завершения процесса
-        //            if (WaitForExit.IsChecked == true)
-        //            {
-        //                // Ожидаем завершения процесса
-        //                process.WaitForExit();
-
-        //                // Получаем код завершения
+      //        Задание 2
+      //  private void LaunchProcess_Click(object sender, RoutedEventArgs e)
+      //        {
+      //            // Создаем процесс
+      //            Process process = new Process();
+      //            process.StartInfo.FileName = "notepad.exe";
+      //            process.StartInfo.UseShellExecute = false;
+      //            process.StartInfo.RedirectStandardOutput = true;
+      //            process.Start();
+      //            if (WaitForExit.IsChecked == true)
+      //            {
+      //                process.WaitForExit();
         //                int exitCode = process.ExitCode;
+          //                Output.Text = $"Код завершения: {exitCode}";
+      //            }
+      //            else
+      //            {
+     
+      //                process.Kill();
+            //                Output.Text = "Процесс принудительно завершен";
+      //            }
+      //        }
+      //    }
+      //}
+      //        Задание3
+      //        private void LaunchProcess_Click(object sender, RoutedEventArgs e)
+      //        {
+      //            //  аргументы командной строки
+      //            string number1 = Number1.Text;
+      //            string number2 = Number2.Text;
+      //            string operation = Operation.SelectedItem.ToString();
 
-        //                // Отображаем код завершения
-        //                Output.Text = $"Код завершения: {exitCode}";
-        //            }
-        //            else
-        //            {
-        //                // Принудительно завершаем процесс
-        //                process.Kill();
+      //            // Создание
+      //            Process process = new Process();
+      //            process.StartInfo.FileName = "Calculator.exe";
+      //            process.StartInfo.Arguments = $"{number1} {operation} {number2} + 10";
+      //            process.StartInfo.UseShellExecute = false;
+      //            process.StartInfo.RedirectStandardOutput = true;
 
-        //                // Отображаем сообщение
-        //                Output.Text = "Процесс принудительно завершен";
-        //            }
-        //        }
-        //    }
-        //}
-        //        Задание3
-        //        private void LaunchProcess_Click(object sender, RoutedEventArgs e)
-        //        {
-        //            //  аргументы командной строки
-        //            string number1 = Number1.Text;
-        //            string number2 = Number2.Text;
-        //            string operation = Operation.SelectedItem.ToString();
+      //            // Запуск
+      //            process.Start();
 
-        //            // Создание
-        //            Process process = new Process();
-        //            process.StartInfo.FileName = "Calculator.exe";
-        //            process.StartInfo.Arguments = $"{number1} {operation} {number2} + 10";
-        //            process.StartInfo.UseShellExecute = false;
-        //            process.StartInfo.RedirectStandardOutput = true;
+      //            //  завершение
+      //            process.WaitForExit();
 
-        //            // Запуск
-        //            process.Start();
+      //            // Получение результата
+      //            string output = process.StandardOutput.ReadToEnd();
 
-        //            //  завершение
-        //            process.WaitForExit();
+      //            // Отображение результата
+      //            Output.Text = $"Результат: {output}";
+      //        }
+      //    }
+      //}
 
-        //            // Получение результата
-        //            string output = process.StandardOutput.ReadToEnd();
+      //Задание 4 
+      //     private void LaunchProcess_Click(object sender, RoutedEventArgs e)
+      //{
 
-        //            // Отображение результата
-        //            Output.Text = $"Результат: {output}";
-        //        }
-        //    }
-        //}
+      //    string filePath = FilePath.Text;
+      //    string searchTerm = SearchTerm.Text;
 
-        //Задание 4 
-        //     private void LaunchProcess_Click(object sender, RoutedEventArgs e)
-        //{
+      //     существует ли файл
+      //    if (!File.Exists(filePath))
+      //    {
+      //        Output.Text = "Файл не существует";
+      //        return;
+      //    }
 
-        //    string filePath = FilePath.Text;
-        //    string searchTerm = SearchTerm.Text;
+      //    Process process = new Process();
+      //    process.StartInfo.FileName = "Find.exe";
+      //    process.StartInfo.Arguments = $"/c \"findstr /s /i /n \"{searchTerm}\" \"{filePath}\"";
+      //    process.StartInfo.UseShellExecute = false;
+      //    process.StartInfo.RedirectStandardOutput = true;
 
-        //    // Проверяем, существует ли файл
-        //    if (!File.Exists(filePath))
-        //    {
-        //        Output.Text = "Файл не существует";
-        //        return;
-        //    }
+      //    process.Start();
 
-        //    Process process = new Process();
-        //    process.StartInfo.FileName = "Find.exe";
-        //    process.StartInfo.Arguments = $"/c \"findstr /s /i /n \"{searchTerm}\" \"{filePath}\"";
-        //    process.StartInfo.UseShellExecute = false;
-        //    process.StartInfo.RedirectStandardOutput = true;
+      //    process.WaitForExit();
 
-        //    process.Start();
+      //    string output = process.StandardOutput.ReadToEnd();
 
-        //    process.WaitForExit();
-
-        //    string output = process.StandardOutput.ReadToEnd();
-
-        //    Output.Text = $"Вхождений: {output.Split('\n').Length - 1}";
-        }
-    }
-
-    
+      //    Output.Text = $"Вхождений: {output.Split('\n').Length - 1}";
+      }
+  }
